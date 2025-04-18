@@ -28,10 +28,12 @@ export default function Shorten() {
                         const result = await createNewLink(alias, originalUrl);
                         setShortenUrl(`${window.location.origin}/${result.alias}`);
                         setError('');
+                        return;
                     }
                     catch (e) {
                         if (e instanceof Error) {
                             setError(e.message);
+                            return;
                         }
                     }
                 }}>
