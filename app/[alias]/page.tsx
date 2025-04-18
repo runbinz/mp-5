@@ -2,9 +2,9 @@ import { redirect } from "next/navigation"
 import getLink from "@/lib/getLink";
 
 export default async function RedirectAlias({params}: {
-    params: { alias: string };
+    params: Promise<{ alias: string }>;
 }) {
-    const { alias } = params;
+    const { alias } = await params;
 
     const url = await getLink(alias);
     if (url === null) {
