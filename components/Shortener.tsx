@@ -25,15 +25,15 @@ export default function Shorten() {
                         return;
                     }
 
-                    const notDupe = await validateDupe(alias);
-                    if (!notDupe) {
-                        setError("Check if not a Dupe");
+                    const isAliasUnique = await validateDupe(alias);
+                    if (!isAliasUnique) {
+                        setError("This alias is already in use. Please choose another one.");
                         return;
                     }
 
                     createNewLink(originalUrl, alias)
                         .then((res) => {
-                            setShortenUrl(`https://mp-5-tau-mauve.vercel.app/${res.alias}`);
+                            setShortenUrl(`https://mp-5-gamma-three.vercel.app/${res.alias}`);
                             setError("");
                         })
                         .catch((e) => {
