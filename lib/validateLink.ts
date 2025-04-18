@@ -12,10 +12,10 @@ export async function validateLink(originalUrl: string): Promise<boolean> {
     }
 }
 
-export async function linkValidation(link: string): Promise<boolean>{
+export async function linkValidation(alias: string): Promise<boolean>{
     try{
         const urlCollection = await getCollection(LINKS_COLLECTION);
-        const exists = await urlCollection.findOne({ link: link });
+        const exists = await urlCollection.findOne({ alias: alias });
         return !exists;
     }
     catch(e){
