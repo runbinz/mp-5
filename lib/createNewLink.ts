@@ -17,6 +17,7 @@ export default async function createNewLink(
     const exists = await linksCollection.findOne({ alias: alias });
     if (exists) {
         throw new Error("Alias already exists");
+
     }
 
     const res = await linksCollection.insertOne({ ...p });
