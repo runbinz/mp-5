@@ -7,10 +7,10 @@ import { Button, TextField } from "@mui/material";
 import validateLink from "@/lib/validateLink";
 
 export default function Shorten() {
-    const[originalUrl, setOriginalUrl] = useState<string>('');
-    const[alias, setAlias] = useState<string>('');
-    const[shortenUrl, setShortenUrl] = useState<string>('');
-    const[error, setError] = useState<string>('');
+    const[originalUrl, setOriginalUrl] = useState("");
+    const[alias, setAlias] = useState("");
+    const[shortenUrl, setShortenUrl] = useState("");
+    const[error, setError] = useState("");
 
     return (
         <>
@@ -18,24 +18,23 @@ export default function Shorten() {
                 onSubmit={async(e) => {
                     e.preventDefault();
 
-                    try {
-                        const valid = await validateLink(originalUrl);
-                        if (!valid) {
-                            setError("URL must be a valid url");
-                            return;
-                        }
-
-                        const result = await createNewLink(alias, originalUrl);
-                        setShortenUrl(`${window.location.origin}/${result.alias}`);
-                        setError('');
+                    const valid = await validateLink(originalUrl);
+                    if (!valid) {
+                        setError("URL must be a valid url");
+                        return;
                     }
-                    catch (e) {
-                        console.error('Error:', e);
+
+                    try {
+                        const res = await createNewLink(alias, originalUrl);
+                        setShortenUrl(`${window.location.origin}/${res.alias}`);
+                        setError("");
+                    } catch (e) {
                         if (e instanceof Error) {
                             setError(e.message);
                         } else {
-                            setError('An unexpected error occurred. Please try again.');
+                            setError("An unknown error occurred");
                         }
+                        console.error(e);
                     }
                 }}>
 
