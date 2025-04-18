@@ -6,6 +6,7 @@ export default async function validateLink(originalUrl: string): Promise<boolean
         return response.status >= 200 && response.status < 400;
     }
     catch (e) {
+        console.log(e)
         return false;
     }
 }
