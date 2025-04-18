@@ -5,7 +5,6 @@ import createNewLink from "@/lib/createNewLink";
 import Link from "next/link";
 import { Button, TextField } from "@mui/material";
 import validateLink from "@/lib/validateLink";
-import validateDupe from "@/lib/validateDupe";
 
 export default function Shorten() {
     const[originalUrl, setOriginalUrl] = useState("");
@@ -22,12 +21,6 @@ export default function Shorten() {
                     const valid = await validateLink(originalUrl);
                     if (!valid) {
                         setError("URL must be a valid url");
-                        return;
-                    }
-
-                    const isAliasUnique = await validateDupe(alias);
-                    if (!isAliasUnique) {
-                        setError("This alias is already in use. Please choose another one.");
                         return;
                     }
 
