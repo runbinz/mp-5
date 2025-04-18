@@ -4,7 +4,8 @@ import {useState} from 'react';
 import createNewLink from "@/lib/createNewLink";
 import Link from "next/link";
 import { Button, TextField } from "@mui/material";
-import {validateLink, validateDupe} from "@/lib/validateLink";
+import validateLink from "@/lib/validateLink";
+import validateDupe from "@/lib/validateDupe";
 
 export default function Shorten() {
     const[originalUrl, setOriginalUrl] = useState("");
@@ -24,24 +25,21 @@ export default function Shorten() {
                         return;
                     }
 
-                    const notDupe = await validateDupe(originalUrl);
+                    const notDupe = await validateDupe(alias);
                     if (!notDupe) {
                         setError("Check if not a Dupe");
                         return;
                     }
 
-                    try {
-                        const res = await createNewLink(alias, originalUrl);
-                        setShortenUrl(`https://mp-5-tau-mauve.vercel.app/${res.alias}`);
-                        setError("");
-                    } catch (e) {
-                        if (e instanceof Error) {
+                    createNewLink(originalUrl, alias)
+                        .then((res) => {
+                            setShortenUrl(`https://mp-5-tau-mauve.vercel.app/${res.alias}`);
+                            setError("");
+                        })
+                        .catch((e) => {
                             setError(e.message);
-                        } else {
-                            setError("An unknown error occurred");
-                        }
-                        console.error(e);
-                    }
+                            console.error(e);
+                        });
                 }}>
 
                 <TextField
@@ -72,7 +70,7 @@ export default function Shorten() {
                 {shortenUrl && (
                     <div>
                         <p>Shortened URL:</p>
-                        <Link href={shortenUrl} target="_blank">
+                        <Link href={`/${alias}`} target="_blank">
                             {shortenUrl}
                         </Link>
                     </div>

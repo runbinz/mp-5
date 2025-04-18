@@ -3,8 +3,8 @@ import getCollection, { LINKS_COLLECTION } from "@/db";
 import { LinkProps } from "@/types";
 
 export default async function createNewLink(
-    alias: string,
     originalUrl: string,
+    alias: string,
 ): Promise<LinkProps> {
     console.log('Shortening link...');
     const p = {
@@ -17,7 +17,6 @@ export default async function createNewLink(
     const exists = await linksCollection.findOne({ alias: alias });
     if (exists) {
         throw new Error("Alias already exists");
-
     }
 
     const res = await linksCollection.insertOne({ ...p });

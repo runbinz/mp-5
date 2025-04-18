@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bee1ba8-2158-4f8e-9f0c-4d7e1bc34fd7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/validateDupe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dis2/src/components/courseStaff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../dis2/src/components/courseStaff.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mp-2/src/components/RandomJokes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../mp-2/src/components/RandomJokes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mp-3/src/components/Calculator/Calculator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../mp-3/src/components/Calculator/Calculator.tsx" afterDir="false" />
@@ -23,7 +24,10 @@
       <change beforePath="$PROJECT_DIR$/../mp-4/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mp-4/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mp-4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mp-4/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Shortener.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shortener.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/createNewLink.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/createNewLink.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/getLink.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getLink.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/validateLink.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/validateLink.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-discussion/src/components/artworks-list-content.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-discussion/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../react-discussion/src/types.ts" afterDir="false" />
@@ -99,7 +103,7 @@
       <workItem from="1744902805371" duration="1477000" />
       <workItem from="1744904288475" duration="9192000" />
       <workItem from="1744953080198" duration="5494000" />
-      <workItem from="1745002338403" duration="4772000" />
+      <workItem from="1745002338403" duration="8623000" />
     </task>
     <servers />
   </component>
