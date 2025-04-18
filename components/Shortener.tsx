@@ -26,7 +26,7 @@ export default function Shorten() {
 
                     try {
                         const res = await createNewLink(alias, originalUrl);
-                        setShortenUrl(`${window.location.origin}/${res.alias}`);
+                        setShortenUrl(`https://mp-5-tau-mauve.vercel.app/${res.alias}`);
                         setError("");
                     } catch (e) {
                         if (e instanceof Error) {
