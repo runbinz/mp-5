@@ -4,7 +4,7 @@ import {useState} from 'react';
 import createNewLink from "@/lib/createNewLink";
 import Link from "next/link";
 import { Button, TextField } from "@mui/material";
-import validateLink from "@/lib/validateLink";
+import {validateLink, validateDupe} from "@/lib/validateLink";
 
 export default function Shorten() {
     const[originalUrl, setOriginalUrl] = useState("");
@@ -21,6 +21,12 @@ export default function Shorten() {
                     const valid = await validateLink(originalUrl);
                     if (!valid) {
                         setError("URL must be a valid url");
+                        return;
+                    }
+
+                    const notDupe = await validateDupe(originalUrl);
+                    if (!notDupe) {
+                        setError("Check if not a Dupe");
                         return;
                     }
 

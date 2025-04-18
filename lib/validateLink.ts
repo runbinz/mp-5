@@ -12,7 +12,7 @@ export async function validateLink(originalUrl: string): Promise<boolean> {
     }
 }
 
-export async function linkValidation(alias: string): Promise<boolean>{
+export async function validateDupe(alias: string): Promise<boolean>{
     try{
         const urlCollection = await getCollection(LINKS_COLLECTION);
         const exists = await urlCollection.findOne({ alias: alias });
