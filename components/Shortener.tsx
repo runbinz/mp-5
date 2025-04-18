@@ -18,22 +18,23 @@ export default function Shorten() {
                 onSubmit={async(e) => {
                     e.preventDefault();
 
-                    const valid =  validateLink(originalUrl);
-                    if (!valid) {
-                        setError("URL must be a valid url");
-                        return;
-                    }
-
                     try {
+                        const valid = await validateLink(originalUrl);
+                        if (!valid) {
+                            setError("URL must be a valid url");
+                            return;
+                        }
+
                         const result = await createNewLink(alias, originalUrl);
                         setShortenUrl(`${window.location.origin}/${result.alias}`);
                         setError('');
-                        return;
                     }
                     catch (e) {
+                        console.error('Error:', e);
                         if (e instanceof Error) {
                             setError(e.message);
-                            return;
+                        } else {
+                            setError('An unexpected error occurred. Please try again.');
                         }
                     }
                 }}>
