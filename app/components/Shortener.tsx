@@ -1,10 +1,10 @@
 'use client';
 
 import {useState} from 'react';
-import createNewLink from "@/lib/createNewLink";
+import createNewLink from "@/app/lib/createNewLink";
 import Link from "next/link";
 import { Button, TextField } from "@mui/material";
-import validateLink from "@/lib/validateLink";
+import validateLink from "@/app/lib/validateLink";
 
 export default function Shorten() {
     const[originalUrl, setOriginalUrl] = useState("");

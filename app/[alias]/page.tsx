@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation"
-import getLink from "@/lib/getLink";
+import getLink from "@/app/lib/getLink";
 
 export default async function RedirectAlias({params}: {
     params: Promise<{ alias: string }>;

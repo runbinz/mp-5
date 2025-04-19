@@ -22,9 +22,6 @@
       <change beforePath="$PROJECT_DIR$/../mp-4/lib/getSafebooruImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../mp-4/lib/getSafebooruImage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mp-4/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mp-4/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mp-4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mp-4/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Shortener.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Shortener.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/validateDupe.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-discussion/src/components/artworks-list-content.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-discussion/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../react-discussion/src/types.ts" afterDir="false" />
     </list>
@@ -99,7 +96,7 @@
       <workItem from="1744902805371" duration="1477000" />
       <workItem from="1744904288475" duration="9192000" />
       <workItem from="1744953080198" duration="5494000" />
-      <workItem from="1745002338403" duration="10840000" />
+      <workItem from="1745002338403" duration="11058000" />
     </task>
     <servers />
   </component>
